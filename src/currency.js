@@ -10,7 +10,20 @@ const defaults = {
   fromCents: false
 };
 
-const round = v => Math.round(v);
+// Bankers Rounding (round half to even) - reduces cumulative rounding bias
+const round = v => {
+  const lower = Math.floor(v);
+  const upper = Math.ceil(v);
+  const fraction = v - lower;
+  
+  // If exactly at 0.5, round to nearest even number
+  if (Math.abs(fraction - 0.5) < Number.EPSILON) {
+    return lower % 2 === 0 ? lower : upper;
+  }
+  
+  // Otherwise use standard rounding
+  return Math.round(v);
+};
 const pow = p => Math.pow(10, p);
 const rounding = (value, increment) => round(value / increment) * increment;
 
