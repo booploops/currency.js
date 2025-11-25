@@ -16,7 +16,7 @@
   "scripts": {
     "build": "npm-run-all clean transpile copy-typescript-definition copy-flow-definition",
     "build:docs": "npm-run-all clean:docs compile:docs minify:docs",
-    "clean": "rimraf dist/*",
+    "clean": "rimraf dist",
     "clean:docs": "rimraf docs/build",
     "compile:docs": "npx babel-node --presets=@babel/preset-env ./docs/src/build-docs.js",
     "coverage": "BABEL_ENV=test nyc ava ./test/test.js",
