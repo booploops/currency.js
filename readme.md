@@ -1,3 +1,8 @@
+> [!NOTE]  
+> Changes in this fork:
+> - Implements ["Bankers Rounding"](https://wiki.c2.com/?BankersRounding) (Rounding half to even / IEEE 754) for all calculations
+> - Modifies build scripts to allow for building on Windows
+> - To use this fork use `github:booploops/currency.js` as the version for currency.js in your `package.json`
 <div align="center" markdown="1">
 
 ![currency.js logo](https://user-images.githubusercontent.com/1062039/31397824-9dfa15f0-adac-11e7-9869-fb20746e90c1.png)
